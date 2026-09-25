@@ -1,12 +1,10 @@
-
 :root {
-  --bg: transparent; /* Or invisible */
+  --bg: transparent;
   --fg: #111827;
   --muted: #6b7280;
   --surface: #f3f4f6;
   --border: #e5e7eb;
 }
-
 
 html {
   box-sizing: border-box;
@@ -14,50 +12,51 @@ html {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  background: var(--bg); /* This will now respect your variable */
+  background: var(--bg);
 }
-
 
 body {
   margin: 0;
   min-height: 200vh;
-  color: var(--fg); /* Fixed variable syntax */
-
-  background: linear-gradient(to right, #5500ff, #37039e); 
+  color: var(--fg);
+  background: linear-gradient(to right, #5500ff, #37039e);
+  /* Prevents horizontal scrollbars during the fly-in animation */
+  overflow-x: hidden;
 }
 
-
-.lb {
-  position: absolute;
-  top: 100vh;
-  left: 5%;
-    width: 700px;
-    height: 400px;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-    --fly-direction: -100vw;
-    --fly-final: 0;
-  z-index: 2;
-}
-
+/* Base Box Styles */
+.lb,
 .rb {
   position: absolute;
   top: 100vh;
-  right: 5%;
-    width: 700px;
-    height: 400px;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-    --fly-direction: 100vw;
-    --fly-final: 0;
-   z-index: 2;
+  width: 700px;
+  max-width: 85vw; /* Added responsiveness so boxes fit smaller screens */
+  height: 400px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  z-index: 2;
+
+  /* Default state before animation triggers */
+  opacity: 0;
+  will-change: transform, opacity;
 }
+
+.lb {
+  left: 5%;
+  --fly-direction: -100vw;
+  --fly-final: 0;
+}
+
+.rb {
+  right: 5%;
+  --fly-direction: 100vw;
+  --fly-final: 0;
+}
+
+/* Keyframe Definition */
 @keyframes flyIn {
   from {
     transform: translateX(var(--fly-direction));
@@ -65,22 +64,17 @@ body {
   }
   to {
     transform: translateX(var(--fly-final));
-    opacity: .6;
+    opacity: 0.6;
   }
 }
 
-.lb,
-.rb {
-  animation: none;
-  opacity: 0;
-}
-
+/* IntersectionObserver Triggered State */
 .lb.visible,
 .rb.visible {
   animation: flyIn 1s ease-out forwards;
 }
 
-}
+/* Media Elements & Parallax Typography */
 img,
 svg,
 video {
@@ -93,18 +87,18 @@ video {
   top: -10%;
   left: 5%;
   transform: translateY(var(--scroll-offset, 0px));
-    max-width: 60%;
-    z-index: -1;
+  max-width: 60%;
+  z-index: -1;
 }
 
 .title {
   position: fixed;
-    text-align: center;
-    font-size: 9rem;
-    top: 20%;
-    left: 60%;
-    transform: translateX(-50%) translateY(var(--scroll-offset, 0px));
-    color: var(--surface);
+  text-align: center;
+  font-size: 9rem;
+  top: 20%;
+  left: 60%;
+  transform: translateX(-50%) translateY(var(--scroll-offset, 0px));
+  color: var(--surface);
 }
 
 a {
