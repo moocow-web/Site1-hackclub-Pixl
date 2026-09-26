@@ -10,7 +10,7 @@ My main goal for this site was a polished UI. It has a custom intro animation, "
 * Modern browser
 * JS enabled
 
-### Installing
+### Use
 
 Site is located [here](https://moocow-web.github.io/Site1-hackclub-Pixl/)
 
