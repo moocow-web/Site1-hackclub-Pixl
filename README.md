@@ -1,5 +1,20 @@
-# Site1-hackclub-Pixl
-This is a bio/about me page; it will be updated overtime. 
+# Bio
+This site is an about me for Hackclub: Pixl
+## Description
+My main goal for this site was a polished UI. It has a custom intro animation, "flyout" widgets, and a gradient background. 
 
-I made this site for Hackclub: Pixl. My main goal for this site is to use a TON of CSS to make the site look good compared to my previous sites (cough cough airhockey). So far, there is only a homepage, but expect more eventually.
+### Screenshots
+!(intro.jpg)
+### Dependencies
 
+* Modern browser
+* JS enabled
+
+### Installing
+
+Site is located [here](https://moocow-web.github.io/Site1-hackclub-Pixl/)
+
+
+## Help
+
+If the site does not load properly, first ensure you are using Chrome or Firefox. If the issue persists, restart the browser.
