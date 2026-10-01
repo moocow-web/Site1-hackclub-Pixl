@@ -37,7 +37,7 @@ body {
     align-items: center;
     border-radius: 25px;
     --fly-direction: -20vw;
-    --fly-final: 0;
+    --fly-final: -10;
   z-index: 2;
 }
 
@@ -58,7 +58,7 @@ body {
     align-items: center;
     border-radius: 25px;
     --fly-direction: 20vw;
-    --fly-final: 0;
+    --fly-final: 10;
    z-index: 2;
 }
 @keyframes flyIn {
