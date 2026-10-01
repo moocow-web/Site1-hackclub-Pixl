@@ -1,10 +1,8 @@
 const title = document.querySelector(".title");
-const video = document.querySelector(".intro");
 
 function updateScrollPosition() {
 	const offset = `${window.scrollY * -0.5}px`;
 	title?.style.setProperty("--scroll-offset", offset);
-	video?.style.setProperty("--scroll-offset", offset);
 }
 
 window.addEventListener("scroll", updateScrollPosition, { passive: true });
