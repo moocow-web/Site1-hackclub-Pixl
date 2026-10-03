@@ -15,6 +15,7 @@ My main goal for this site was a polished UI. It has a custom intro animation, "
   
 ## Screenshots
 <img width="1721" height="2464" alt="image" src="https://github.com/user-attachments/assets/c188ed60-9b40-4992-8550-d425fa703ed0" />
+
 ## Dependencies
 
 * Modern browser
